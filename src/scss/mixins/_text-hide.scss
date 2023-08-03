@@ -1,0 +1,6 @@
+@mixin text-hide($num) {
+    display: -webkit-box;
+    -webkit-line-clamp: #{$num};
+    -webkit-box-orient: vertical;
+    overflow-y: hidden;
+}

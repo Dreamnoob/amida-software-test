@@ -1,0 +1,47 @@
+.footer {
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    &-text {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 0;
+
+        text-align: center;
+    }
+
+    &-link {
+        display: inline-block;
+
+        color: #007bff;
+        text-decoration: none;
+
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: '';
+            height: 1px;
+            width: 100%;
+            background-color: #007bff;
+            transition: transform 0.2s linear;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateX(-110%);
+        }
+
+        @media(any-hover: hover) {
+            &:hover {
+                &::before {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,134 @@
+.basket {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 320px;
+    height: 100vh;
+    padding: 20px;
+
+    background-color: #fff;
+    box-shadow: rgba(97, 110, 130, 0.5) 0px 4px 8px;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: 200ms ease-out;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    @media (min-width: 768px) {
+        width: 400px;
+    }
+
+    &.open {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    &-close {
+        width: 40px;
+        height: 40px;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin-left: auto;
+
+        background-color: transparent;
+        border-radius: 50%;
+        border: 1px solid grey;
+
+        @media(any-hover: hover) {
+            &:hover {
+                .fas::before {
+                    color: red;
+                }
+            }
+        }
+
+        .fas {
+            width: 20px;
+            height: 20px;
+
+            &::before {
+                transition: 0.15s ease-out;
+                font-size: 20px;
+            }
+        }
+    }
+
+    &-empty {
+        margin: auto;
+        padding: 10px 0;
+
+        font-weight: 700;
+        line-height: 1.1;
+        font-size: 40px;
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    &-content {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        .product {
+            width: 100%;
+            max-width: unset;
+
+            &-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            &-price {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-counter,
+    &-price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 10px;
+
+        font-size: 14px;
+        line-height: 1.1;
+
+        p {
+            margin: 0;
+        }
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &-reset {
+        margin-top: 20px;
+    }
+}

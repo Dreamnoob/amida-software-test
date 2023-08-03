@@ -1,0 +1,64 @@
+.intro {
+    margin: 40px 0 60px;
+
+    @media (min-width: 992px) {
+        margin-bottom: 120px;
+    }
+
+    &-title {
+        margin: 0 0 30px;
+        font-size: 32px;
+        line-height: 1.1;
+
+        @media (min-width: 992px) {
+            font-size: 40px;
+        }
+    }
+
+    &-description {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        font-size: 14px;
+        line-height: 1.1;
+        color: #000;
+
+        @media (min-width: 992px) {
+            font-size: 18px;
+        }
+
+        p,
+        ul {
+            margin: 0;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+
+            position: relative;
+
+            &::before {
+                content: '';
+                height: 1px;
+                width: 100%;
+                background-color: #007bff;
+                transition: background-color 0.2s linear;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transform: translateX(0);
+            }
+
+            @media(any-hover: hover) {
+                &:hover {
+                    &::before {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}

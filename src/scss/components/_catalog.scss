@@ -1,0 +1,21 @@
+.catalog {
+    margin-bottom: 60px;
+
+    @media (min-width: 992px) {
+        margin-bottom: 120px;
+    }
+
+    &-title {
+        margin: 0 0 30px;
+        font-size: 28px;
+        line-height: 1.1;
+
+        @media (min-width: 992px) {
+            font-size: 36px;
+        }
+    }
+
+    .row {
+        gap: 30px 0;
+    }
+}

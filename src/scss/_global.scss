@@ -1,0 +1,39 @@
+* {
+    font-family: "GothamPro", sans-serif;
+}
+
+body {
+    background: #F4F9FE;
+}
+
+.container {
+    max-width: 1130px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+
+    &.scroll-hide {
+        height: calc(var(--vh, 1vh) * 100);
+    }
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
